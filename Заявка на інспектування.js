@@ -113,7 +113,7 @@ function controlDisabled(CODE, disabled = true) {
 }
 
 //4. // Вирахування суми ПДВ заявки
-function onChangelocomotiveInspectionRequest() {
+function calculationRequestAmount() {
   let VATpercentage = 0;
   const attrVATAmount = EdocsApi.getAttributeValue("RequestVATAmmount");
   const attrVATpercentage = EdocsApi.getAttributeValue("RequestVATPerecent");
@@ -146,6 +146,10 @@ function onChangelocomotiveInspectionRequest() {
   EdocsApi.setAttributeValue(attrAmountOutVAT);
 }
 
-function onChangeVATpercentage() {
-  onChangeAuctionScrapMetalSalesContractAmount();
+function onChangeedocsDocSum() {
+  calculationRequestAmount();
+}
+
+function onChangeRequestVATPerecent() {
+  calculationRequestAmount();
 }
